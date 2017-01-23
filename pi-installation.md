@@ -4,5 +4,10 @@
 * On Windows, use [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/) to flash the image onto the RaspberryPi microSD card. Make sure you select the correct drive before pressing the `write` button.
 * Start your RaspberryPi and use nmap to discover its IP (on Windows you can use [Zenmap](https://nmap.org/zenmap/))
 ```bash
+nmap -sn <ip-of-your-local-router>/24
+```
+e.g.
+```
 nmap -sn 192.168.0.1/24
 ```
+
