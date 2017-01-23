@@ -3,9 +3,9 @@
 ## Prerequisites & Assumptions
 
 * [Raspbian Jessie 2017-01-11](https://www.raspberrypi.org/downloads/raspbian/) is installed on your Pi.
-* 2 wlan interfaces named 'wlan0' and 'wlan1'.
-* With `wlan0` the network `192.168.0.*` is joined with a router at `192.168.0.1`.
-* Bebop has IP `192.168.42.1`.
+* 2 wlan interfaces named 'wlan0' and 'wlan1' show up on `ifconfig -a`.
+* A network with SSID `<ssid-local>` is in range with a router at `192.168.0.1` and an address space `192.168.0.*`.
+* Your Bebop 2 is switched on and has IP `192.168.42.1`.
 
 ## Approach
 
