@@ -1,7 +1,11 @@
-# Bebop-Bridge Wifi Configuration
+# Network Configuration
 
-## RaspberryPi Setup
+## Prerequisites
 
-Documentation tested on Raspbian Jessie 2017-01-11
+* Installed [Raspbian Jessie 2017-01-11](https://www.raspberrypi.org/downloads/raspbian/)
+* 2 wlan interfaces named 'wlan0' and 'wlan1'
 
-## Configuration
+## Wifi Setup
+
+## Routing
+
