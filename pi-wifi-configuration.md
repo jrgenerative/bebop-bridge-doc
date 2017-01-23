@@ -59,7 +59,22 @@ Configure authentication to the Bebop network with SSID <Bebop2-xxxxxx>` and pre
 ```
 sudo nano /etc wpa_supplicant/wpa_supplicant_bebop.conf
 ```
+Add the following
+```
+network{
+ ssid="<Bebop2-xxxxxx>"
+ psk="<psk-bebop>"
+ key_mgmt=NONE
+}
+```
+Unfortunately, Bebop 2 has by default an open network which is why `key_mgmt=NONE` is required.
 
-
+Test your configuration with
+```
+sudo ifdown wlan0 && sudo ifup wlan0
+sudo ifdown wlan1 && sudo ifup wlan1
+ifconfig
+```
 ## Routing
 
+[TODO]
