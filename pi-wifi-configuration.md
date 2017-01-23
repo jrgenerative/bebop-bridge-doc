@@ -37,15 +37,15 @@ allow-hotplug wlan1
  wpa-conf /etc/wpa_supplicant/wpa_supplicant_bebop.conf
 ```
 
-Configure authentication to your local network with SSID `<ssid>` and pre-shared key `<psk>` for `wlan0`
+Configure authentication to your local network with SSID `<ssid-local>` and pre-shared key `<psk-local>` for `wlan0`
 ```
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 Add the following
 ```
 network={
- ssid="<ssid>"
- psk="<psk>"
+ ssid="<ssid-local>"
+ psk="<psk-local>"
 }
 ```
 Other lines such as
@@ -55,14 +55,14 @@ update_config=1
 ```
 can be left untouched.
 
-Configure authentication to the Bebop network with SSID <Bebop2-xxxxxx>` and pre-shared key `<psk-bebop>` for `wlan1`
+Configure authentication to the Bebop network with SSID <ssid-bebop>` and pre-shared key `<psk-bebop>` for `wlan1`
 ```
 sudo nano /etc wpa_supplicant/wpa_supplicant_bebop.conf
 ```
 Add the following
 ```
 network{
- ssid="<Bebop2-xxxxxx>"
+ ssid="<ssid-bebop>"
  psk="<psk-bebop>"
  key_mgmt=NONE
 }
@@ -75,6 +75,9 @@ sudo ifdown wlan0 && sudo ifup wlan0
 sudo ifdown wlan1 && sudo ifup wlan1
 ifconfig
 ```
+
+You should now see that `wlan0` joined `<ssid-local>` with IP `192.168.0.<xx>` and `wlan1` joined `<ssid-bebop` with an IP assigned via dhcp in the range of `192.168.42.*`.
+
 ## Routing
 
 [TODO]
