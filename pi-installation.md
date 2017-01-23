@@ -10,4 +10,4 @@ e.g.
 ```
 nmap -sn 192.168.0.1/24
 ```
-
+* Login to your RaspberryPi via ssh with the Raspbian default user `pi` and default password `raspberry`. On Windows you can use [PuTTY](http://www.putty.org/).
