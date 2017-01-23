@@ -16,9 +16,9 @@ sudo apt-get dist-upgrade
 
 From [this](http://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/) documentation:
 
-* `sudo curl -sSL get.docker.com | sh`
-* `sudo usermod -aG docker pi`
-* Start docker on boot `sudo systemctl enable docker`
+* Install docker: `sudo curl -sSL get.docker.com | sh`
+* Add the `pi` user to the `docker` group: `sudo usermod -aG docker pi`
+* Configure to start docker on boot: `sudo systemctl enable docker`
 
 Now reboot or start docker via
 ```
