@@ -76,7 +76,7 @@ sudo ifdown wlan1 && sudo ifup wlan1
 ifconfig
 ```
 
-You should now see that `wlan0` joined `<ssid-local>` with IP `192.168.0.<xx>` and `wlan1` joined `<ssid-bebop` with an IP assigned via dhcp in the range of `192.168.42.*`.
+You should now see that `wlan0` joined `<ssid-local>` with IP `192.168.0.<xx>` and `wlan1` joined `<ssid-bebop>` with an IP assigned via dhcp from `192.168.42.*`.
 
 ## Routing
 
