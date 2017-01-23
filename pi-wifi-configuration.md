@@ -1,9 +1,11 @@
 # Network Configuration
 
-## Prerequisites
+## Prerequisites & Assumptions
 
-* Installed [Raspbian Jessie 2017-01-11](https://www.raspberrypi.org/downloads/raspbian/)
-* 2 wlan interfaces named 'wlan0' and 'wlan1'
+* [Raspbian Jessie 2017-01-11](https://www.raspberrypi.org/downloads/raspbian/) is installed on your Pi.
+* 2 wlan interfaces named 'wlan0' and 'wlan1'.
+* With `wlan0` the network `192.168.0.*` is joined with a router at `192.168.0.1`.
+* Bebop has IP `192.168.42.1`.
 
 ## Approach
 
@@ -12,6 +14,28 @@
 * Configure a routing table such that requests to `192.168.42.*` are routed via `wlan`, everything else via `wlan0`.
 
 ## Wifi Setup
+
+Edit your network configuration via
+```
+sudo nano /etc/network/interfaces
+```
+
+To connect `wlan0` to your local network with internet access edit the section for `wlan0` as
+```
+allow-hotplug wlan0
+ iface wlan0 inet static
+ address 192.168.0.<xx>
+ netmask 255.255.255.0
+ gateway 192.168.0.1
+ wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+To connect with `wlan1` to Bebop, edit or add the `wlan1` section as
+```
+allow-hotplug wlan1
+ iface wlan1 inet manual
+ wpa-conf /etc/wpa_supplicant/wpa_supplicant_bebop.conf
+```
 
 ## Routing
 
