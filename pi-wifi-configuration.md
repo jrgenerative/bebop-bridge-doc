@@ -20,7 +20,7 @@ Edit your network configuration via
 sudo nano /etc/network/interfaces
 ```
 
-To connect `wlan0` to your local network with internet access edit the section for `wlan0` as
+To connect `wlan0` to your local network (with internet access) edit or add the `wlan0` section as
 ```
 allow-hotplug wlan0
  iface wlan0 inet static
@@ -36,6 +36,30 @@ allow-hotplug wlan1
  iface wlan1 inet manual
  wpa-conf /etc/wpa_supplicant/wpa_supplicant_bebop.conf
 ```
+
+Configure authentication to your local network with SSID `<ssid>` and pre-shared key `<psk>` for `wlan0`
+```
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+```
+Add the following
+```
+network={
+ ssid="<ssid>"
+ psk="<psk>"
+}
+```
+Other lines such as
+```
+ctrl_interface=/var/....
+update_config=1
+```
+can be left untouched.
+
+Configure authentication to the Bebop network with SSID <Bebop2-xxxxxx>` and pre-shared key `<psk-bebop>` for `wlan1`
+```
+sudo nano /etc wpa_supplicant/wpa_supplicant_bebop.conf
+```
+
 
 ## Routing
 
