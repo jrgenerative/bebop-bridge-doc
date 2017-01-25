@@ -48,7 +48,7 @@ WantedBy=default.target
 ```
 ### Bridge-Service Test Mode
 
-Configure a script to run the bridge-service configured to use a Bebop mock-up implementation.
+Configure a script to run the bridge-service with a mock-up implementation of Bebop.
 
 In `/etc/systemd/system` add a file, e.g. `bebop-bridge-service-dummy.service` with content:
 
@@ -70,42 +70,48 @@ WantedBy=default.target
 
 ## Test the Installation
 
-$>sudo systemctl daemon-reload
-$>sudo systemctl start bebop-bridge-service.service
-// try the app
-$>sudo systemctl stop bebop-bridge-service.service
-
-
-
-Test this with:
+After putting in place above scripts
 ```
 sudo systemctl daemon-reload
+```
+
+To start the application
+```
+sudo systemctl start bebop-bridge-service.service
 sudo systemctl start bebop-bridge-client.service
 ```
-try the app
+
+Point your browser to the address of your server, port `8080`.
+
+To stop the application
 ```
 sudo systemctl stop bebop-bridge-client.service
+sudo systemctl stop bebop-bridge-service.service
 ```
 
-To enable the service at system startup, execute:
+## Start the Application at System Startup
 
+To enable starting the bebop-bridge application automatically at system start, execute:
+```
 sudo systemctl enable bebop-bridge-client.service
+sudo systemctl enable bebop-bridge-service.service
+```
 
-
-
-
-## Upgrade Docker image
+## Upgrade the Application
 
 Client 
-$>sudo systemctl stop bebop-bridge-client.service
-$> docker pull jrgenerative/bebop-bridge-client-pi
-$>sudo systemctl start bebop-bridge-client.service
+```
+sudo systemctl stop bebop-bridge-client.service
+docker pull jrgenerative/bebop-bridge-client-pi
+sudo systemctl start bebop-bridge-client.service
+```
 
 Service 
-$>sudo systemctl stop bebop-bridge-service.service
-$> docker pull jrgenerative/bebop-bridge-client-pi
-$>sudo systemctl start bebop-bridge-service.service
-
+```
+sudo systemctl stop bebop-bridge-service.service
+docker pull jrgenerative/bebop-bridge-client-pi
+sudo systemctl start bebop-bridge-service.service
+```
 
 
 
