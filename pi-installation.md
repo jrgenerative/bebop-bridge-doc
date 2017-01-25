@@ -7,6 +7,8 @@
 
 # Enable SSH Server
 
+On Raspbian Jessie with Pixel, the SSH server was somehow disabled by default. If you have a screen and a keyboard do:
+
 ```
 sudo raspi-config
 ```
