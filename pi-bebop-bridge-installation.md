@@ -114,9 +114,3 @@ sudo systemctl start bebop-bridge-service.service
 ```
 
 
-
-Start and stop this sevice:
-
-$>sudo systemctl start bebop-bridge-service-dummy.service
-$>sudo systemctl stop bebop-bridge-service-dummy.service
-
