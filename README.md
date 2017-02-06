@@ -6,3 +6,11 @@ Documentation for the bebop-bridge application
 2. [Configure your network](https://github.com/jrgenerative/bebop-bridge-doc/blob/master/pi-wifi-configuration.md)
 3. [Install Docker](https://github.com/jrgenerative/bebop-bridge-doc/blob/master/pi-docker-installation.md)
 4. [Install and run Bebop-Bridge](https://github.com/jrgenerative/bebop-bridge-doc/blob/master/pi-bebop-bridge-installation.md)
+
+# Debug network traffic between Bebop and service
+
+To see back and forth traffice from port to port:
+
+```
+tcpdump -i wlan1 
+```
