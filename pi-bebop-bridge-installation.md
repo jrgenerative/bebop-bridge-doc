@@ -98,18 +98,19 @@ sudo systemctl enable bebop-bridge-service.service
 ```
 
 ## Upgrade the Application
-
-Client 
+ 
 ```
+#!/bin/bash
+
+set -x
+
 sudo systemctl stop bebop-bridge-client.service
-docker pull jrgenerative/bebop-bridge-client-pi
-sudo systemctl start bebop-bridge-client.service
-```
-
-Service 
-```
 sudo systemctl stop bebop-bridge-service.service
+
 docker pull jrgenerative/bebop-bridge-client-pi
+docker pull jrgenerative/bebop-bridge-client-pi
+
+sudo systemctl start bebop-bridge-client.service
 sudo systemctl start bebop-bridge-service.service
 ```
 
