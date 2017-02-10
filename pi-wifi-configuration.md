@@ -78,11 +78,11 @@ ifconfig
 
 You should now see that `wlan0` joined `<ssid-local>` with IP `192.168.0.<xx>` and `wlan1` joined `<ssid-bebop>` with an IP assigned via dhcp from `192.168.42.*`.
 
-## Routing Between Bebop's Interface and Interface to Outer World
+## Routing between Bebop's interface (wlan1) and the interface to outer world (wlan0)
 
 No additional configuration is required to be able to run the bebop-bridge with the above setup.
 
-## Configuring to Connect with wlan0 to the Internet via Different Networks
+## Configuring to connect with wlan0 to different networks
 
 If you want to configure wpa_supplicant to connect to different wireless networks depending on which is available, do the following:
 
