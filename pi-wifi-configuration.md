@@ -13,7 +13,7 @@
 * Use `wlan1` to connect to Bebop's access point at `192.168.42.1`.
 * Configure a routing table such that requests to `192.168.42.*` are routed via `wlan`, everything else via `wlan0`.
 
-## Wifi Setup
+## Basic Wifi Setup
 
 Edit your network configuration via
 ```
@@ -78,6 +78,43 @@ ifconfig
 
 You should now see that `wlan0` joined `<ssid-local>` with IP `192.168.0.<xx>` and `wlan1` joined `<ssid-bebop>` with an IP assigned via dhcp from `192.168.42.*`.
 
-## Routing
+## Routing Between Bebop's Interface and Interface to Outer World
 
-[TODO]
+No additional configuration is required to be able to run the bebop-bridge with the above setup.
+
+## Configuring to Connect with wlan0 to the Internet via Different Networks
+
+If you want to configure wpa_supplicant to connect to different wireless networks depending on which is available, do the following:
+
+In /etc/wpa_supplicant/wpa_supplicant.conf you can add multiple network configurations, but you must name them using the id_str attribute.
+```
+network={
+    ssid="<ssid-01>"
+    psk="<psk-01>"
+    id_str="<any-name-01>"
+}
+network={
+    ssid="<ssid-02>"
+    psk="<psk-02>"
+    id_str="<any-name-02>"
+}
+```
+
+In /etc/network/interfaces set up your wlan0 configuration for example as follows (leave any other sections as is, e.g. for eth0):
+
+```
+allow-hotplug wlan0
+iface wlan0 inet manual
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+
+iface <any-name-01> inet static
+address <address-01>
+gateway <gateway-01>
+netmask <255.255.255.0>
+
+iface home inet static
+address <address-02>
+gateway <gateway-02>
+netmask <255.255.255.0>
+```
+
