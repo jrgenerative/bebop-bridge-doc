@@ -104,14 +104,29 @@ sudo systemctl enable bebop-bridge-service.service
 
 set -x
 
+echo "Stopping bebop-bridge services ..."
 sudo systemctl stop bebop-bridge-client.service
 sudo systemctl stop bebop-bridge-service.service
 
+echo "Pulling latest images ..."
 docker pull jrgenerative/bebop-bridge-client-pi
 docker pull jrgenerative/bebop-bridge-client-pi
 
+echo "Starting bebop-bridge services ..."
 sudo systemctl start bebop-bridge-client.service
 sudo systemctl start bebop-bridge-service.service
+
+# Remove exited and untagged images
+
+set -o errexit
+
+echo "Removing exited docker containers..."
+docker ps -a -f status=exited -q | xargs -r docker rm -v
+
+echo "Removing untagged images..."
+docker images --no-trunc | grep "<none>" | awk '{print $3}' | xargs -r docker rmi
+
+echo "Done"
+
+read -p "Press any key to continue ..."
 ```
-
-
