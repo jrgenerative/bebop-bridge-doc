@@ -1,4 +1,4 @@
-# Installing the Bebop-Bridge
+# Installing the Bebop-Bridge on the RaspberryPi with Debian
 
 ## Download the Application
 
