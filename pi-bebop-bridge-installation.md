@@ -101,8 +101,7 @@ sudo systemctl enable bebop-bridge-service.service
  
 ```
 #!/bin/bash
-
-set -x
+#set -x
 
 echo "Stopping bebop-bridge services ..."
 sudo systemctl stop bebop-bridge-client.service
