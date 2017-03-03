@@ -39,7 +39,7 @@ After=docker.service
 
 [Service]
 Restart=always
-ExecStart=/usr/bin/docker run --name bridge-service -p 4000:4000 -p 43210:43210/udp -p 55636:55636/udp -p 44820:44820/udp -p 54321:54321/udp -p 44444:44444/udp jrgenerative/bebop-bridge-service-pi
+ExecStart=/usr/bin/docker run --name bridge-service -p 4000:4000 -p 43210:43210/udp jrgenerative/bebop-bridge-service-pi
 ExecStop=/usr/bin/docker stop -t 5 bridge-service
 ExecStopPost=/usr/bin/docker rm -f bridge-service
 
