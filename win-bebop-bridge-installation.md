@@ -12,7 +12,7 @@ docker pull jrgenerative/bebop-bridge-service
 
 ```
 REM Start stuff
-start docker run --name bridge-service -p 43210:43210/udp -p 55636:55636/udp -p 44820:44820/udp -p 54321:54321/udp -p 4000:4000 jrgenerative/bebop-bridge-service
+start docker run --name bridge-service -p 43210:43210/udp -p 4000:4000 jrgenerative/bebop-bridge-service
 start docker run --name bridge-client -p 8080:8080 jrgenerative/bebop-bridge-client
 ```
 
