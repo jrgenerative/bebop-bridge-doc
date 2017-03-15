@@ -51,7 +51,7 @@ Listen to traffic via port 4000 (socket.io connection of controller)
 
 Listen to udp traffice on 43210
 
-`docker exec bridge-service tcpdump -i eth0 -n -vv udp dst port 43210`
+`docker exec bridge-service tcpdump -i eth0 -n udp dst port 43210`
 
 ## Listen on Linux to traffic
 
