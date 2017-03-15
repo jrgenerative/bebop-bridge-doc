@@ -26,7 +26,7 @@ Send tcp message to 192.168.0.199 4000
 
 `echo -n “foo my message goes here” | nc -4 -w1 192.168.0.199 4000`
 
-##Listen to traffice in a running Docker container:
+## Listen to traffice in a running Docker container:
 
 Need to install some stuff:
 ```
