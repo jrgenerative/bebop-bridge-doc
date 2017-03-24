@@ -7,6 +7,12 @@ Documentation for the bebop-bridge application
 3. [Install Docker](https://github.com/jrgenerative/bebop-bridge-doc/blob/master/pi-docker-installation.md)
 4. [Install and run Bebop-Bridge](https://github.com/jrgenerative/bebop-bridge-doc/blob/master/pi-bebop-bridge-installation.md)
 
+# Open Shell in Docker Container
+
+```
+sudo docker exec -i -t bridge-service  /bin/bash
+```
+
 # Debug network traffic between Bebop and service
 
 To see back and forth traffice from port to port:
